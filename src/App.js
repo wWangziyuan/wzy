@@ -3,7 +3,13 @@ import { Button, Input } from '@douyinfe/semi-ui';
 import { Title } from '@douyinfe/semi-ui/lib/es/skeleton/item';
 import Text from '@douyinfe/semi-ui/lib/es/typography/text';
 import { useState } from 'react';
-function App() {
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useNavigate,
+} from 'react-router-dom';
+function App2() {
+  const navigate = useNavigate();
   const [accountName, setAccountName] = useState();
   const [password, setPassword] = useState();
   const login = () => {
@@ -17,6 +23,7 @@ function App() {
     })
       .then(() => {
         console.log('跳转新页面');
+        navigate('/success');
       })
       .catch(error => {
         console.log('错误处理：', error);
@@ -51,5 +58,19 @@ function App() {
     </>
   );
 }
+const router = createBrowserRouter([
+  {
+    path: '/login',
+    element: <App2 />,
+  },
+  {
+    path: '/success',
+    element: <div>success</div>,
+  },
+]);
+
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
 export default App;
