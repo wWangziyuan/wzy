@@ -1,7 +1,5 @@
-import './App.css';
 import { Button, Input } from '@douyinfe/semi-ui';
-import { Title } from '@douyinfe/semi-ui/lib/es/skeleton/item';
-import Text from '@douyinfe/semi-ui/lib/es/typography/text';
+import { Typography } from '@douyinfe/semi-ui';
 import { useState } from 'react';
 import {
   createBrowserRouter,
@@ -9,6 +7,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 function App2() {
+  const { Title, Text } = Typography;
   const navigate = useNavigate();
   const [accountName, setAccountName] = useState();
   const [password, setPassword] = useState();
