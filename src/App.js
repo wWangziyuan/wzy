@@ -1,12 +1,6 @@
-import { Button, Input } from '@douyinfe/semi-ui';
-import { Typography } from '@douyinfe/semi-ui';
-import { useState } from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useNavigate,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from './login';
+import Callroll from './callroll';
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -19,7 +13,7 @@ const App = () => {
     },
     {
       path: '/callroll',
-      element: <div>点名</div>,
+      element: <Callroll />,
     },
   ]);
   return <RouterProvider router={router} />;
