@@ -19,22 +19,18 @@ const Login = () => {
     })
       .then(() => {
         console.log('跳转新页面');
-        navigate('/success');
+        navigate('/callroll');
       })
       .catch(error => {
         setError(error);
       });
   };
-  const a = useRef();
-  useEffect(() => {
-    a.current.focus();
-  }, []);
 
   return (
     <>
       <Title>欢迎登录教师点名系统</Title>
       <Input
-        ref={a}
+        autoFocus
         value={accountName}
         placeholder={'请输入账号'}
         onChange={changeValue => {
@@ -48,7 +44,7 @@ const Login = () => {
           setPassword(changeValue);
         }}
       />
-      <div>{error.msg && <Text type="danger">{error.msg}</Text>}</div>
+      {error.msg && <Text type="danger">{error.msg}</Text>}
       <Button
         onClick={() => {
           login();
