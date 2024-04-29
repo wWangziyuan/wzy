@@ -1,29 +1,39 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import { List, Button } from '@douyinfe/semi-ui';
+import { List, Button, Spin, Modal } from '@douyinfe/semi-ui';
 import './style.scss';
+import useSWR from 'swr';
 
 const Callroll = () => {
-  const [students, setStudents] = useState();
-  useEffect(() => {
-    axios
-      .get('http://localhost:4000/students')
-      .then(response => {
-        setStudents(response.data);
-      })
-      .catch(error => {
-        console.log(error); // 输出错误信息
-      });
-    // axios
-    //   .post('http://localhost:4000/students', { name: '测试学生', points: 100 })
-    //   .then(response => {
-    //     console.log(response.data); // 输出获取到的学生信息
-    //   })
-    //   .catch(error => {
-    //     console.error(error); // 输出错误信息
-    //   });
-  }, []);
-  // return <div>{students && students.map(x => <div>{x.name}</div>)}</div>;
+  const [currentStudent, setCurrentStudent] = useState();
+  const [selectedStudents, setSelectedStudents] = useState([]);
+  const {
+    data: students,
+    error,
+    loading,
+  } = useSWR('http://localhost:4000/students', url =>
+    axios.get(url).then(res => res.data),
+  );
+  const [visible, setVisible] = useState(false);
+
+  if (loading) {
+    return <Spin />;
+  }
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
+  const showDialog = () => {
+    setVisible(true);
+  };
+  const handleOk = () => {
+    setVisible(false);
+    console.log('Ok button clicked');
+  };
+  const handleCancel = () => {
+    setVisible(false);
+    console.log('Cancel button clicked');
+  };
   return (
     <div className={'callroll'}>
       <List
@@ -32,17 +42,38 @@ const Callroll = () => {
           gutter: 12,
           span: 3,
         }}
-        renderItem={item => (
-          <List.Item>
-            <Button style={{ width: 168 }}>
-              {item.name} {item.points}
-            </Button>
-          </List.Item>
-        )}
+        renderItem={(item, index) => {
+          if (item.name === '付子豪') {
+            return (
+              <List.Item>
+                <Button style={{ width: 168 }}>
+                  👑{item.name} {item.points} {index}
+                </Button>
+              </List.Item>
+            );
+          } else {
+            return (
+              <List.Item>
+                <Button style={{ width: 168 }}>
+                  {item.name} {item.points} {index}
+                </Button>
+              </List.Item>
+            );
+          }
+        }}
       ></List>
-      <Button className={'answer'} theme="solid">
+      <Button onClick={showDialog} className={'answer'} theme="solid">
         回答问题
       </Button>
+      <Modal
+        title="幸运儿"
+        visible={visible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        closeOnEsc={true}
+      >
+        我
+      </Modal>
     </div>
   );
 };
