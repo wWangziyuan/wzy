@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { List, Button } from '@douyinfe/semi-ui';
+import './style.scss';
 
 const Callroll = () => {
   const [students, setStudents] = useState();
@@ -24,7 +25,7 @@ const Callroll = () => {
   }, []);
   // return <div>{students && students.map(x => <div>{x.name}</div>)}</div>;
   return (
-    <>
+    <div className={'callroll'}>
       <List
         dataSource={students}
         grid={{
@@ -39,8 +40,10 @@ const Callroll = () => {
           </List.Item>
         )}
       ></List>
-      <Button theme="solid">回答问题</Button>
-    </>
+      <Button className={'answer'} theme="solid">
+        回答问题
+      </Button>
+    </div>
   );
 };
 export default Callroll;
