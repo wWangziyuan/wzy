@@ -2,6 +2,9 @@ import { Button, Input } from '@douyinfe/semi-ui';
 import { Typography } from '@douyinfe/semi-ui';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './index.module.scss'
+import { List } from '@douyinfe/semi-ui';
+
 const Login = () => {
   const navigate = useNavigate();
   const { Title, Text } = Typography;
@@ -27,33 +30,33 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className = {styles.root}>
       <Title>欢迎登录教师点名系统</Title>
       <Input
         autoFocus
-        value={accountName}
-        placeholder={'请输入账号'}
-        onChange={changeValue => {
+        value = {accountName}
+        placeholder = {'请输入账号'}
+        onChange = {changeValue => {
           setAccountName(changeValue);
         }}
       />
       <Input
-        value={password}
-        placeholder={'请输入密码'}
-        onChange={changeValue => {
+        value = {password}
+        placeholder = {'请输入密码'}
+        onChange = {changeValue => {
           setPassword(changeValue);
         }}
       />
       {error.msg && <Text type="danger">{error.msg}</Text>}
       <Button
-        onClick={() => {
+        onClick = {() => {
           login();
         }}
       >
         登录
       </Button>
       <Text>如果还没有账号请点击这里注册</Text>
-    </>
+    </div>
   );
 };
 
