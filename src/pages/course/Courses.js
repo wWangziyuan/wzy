@@ -69,7 +69,7 @@ export const Courses = () => {
                         setCourseName(changeValue);
                     }}
                 />
-            </Modal>
+            </Modal>    ``
         </div>
     );
 };
