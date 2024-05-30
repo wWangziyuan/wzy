@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+<<<<<<< HEAD
 import Login from './login/login';
 import Callroll from './callroll';
 import React from 'react';
@@ -21,6 +22,10 @@ class SimpleList extends React.Component {
     }
   }
 
+=======
+import Login from './login';
+import Callroll from './pages/callroll';
+>>>>>>> 378a321d4070a4f9b84a77956da2ca5f9cc69341
 const App = () => {
   const router = createBrowserRouter([
     {

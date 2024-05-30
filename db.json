@@ -1,0 +1,59 @@
+{
+  "students": [
+    {
+      "name": "张恩淇",
+      "points": 0,
+      "id": "9aee"
+    },
+    {
+      "name": "王子浩然",
+      "points": 0,
+      "id": "e280"
+    },
+    {
+      "name": "赵胤轩",
+      "points": 0,
+      "id": "4d0c"
+    },
+    {
+      "name": "曾奕洲",
+      "points": 0,
+      "id": "db6d"
+    },
+    {
+      "name": "付子豪",
+      "points": 0,
+      "id": "2eba"
+    },
+    {
+      "name": "段啸俣",
+      "points": 0,
+      "id": "79ef"
+    },
+    {
+      "name": "高涵",
+      "points": 0,
+      "id": "edfa"
+    },
+    {
+      "name": "王子元",
+      "points": 0,
+      "id": "9225"
+    },
+    {
+      "name": "吴廷潇",
+      "points": 0,
+      "id": "3f2f"
+    },
+    {
+      "id": "a198",
+      "name": "测试学生",
+      "points": 100
+    },
+    {
+      "id": "0993",
+      "name": "测试学生2",
+      "points": 101
+    }
+  ]
+}

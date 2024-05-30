@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@douyinfe/semi-ui": "^2.56.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -10,20 +11,40 @@
     "css-loader": "^7.1.1",
     "jsonwebtoken": "^9.0.2",
     "postman": "^0.2.0",
+=======
+    "@craco/craco": "^7.1.0",
+    "@douyinfe/semi-ui": "^2.55.4",
+    "@douyinfe/semi-webpack-plugin": "^2.57.0",
+    "@semi-bot/semi-theme-callroll": "^1.0.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.8",
+    "prettier": "^3.2.5",
+>>>>>>> 378a321d4070a4f9b84a77956da2ca5f9cc69341
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
     "reset-css": "^5.0.2",
     "sass": "^1.75.0",
     "style-loader": "^4.0.0",
     "web-vitals": "^2.1.4"
+=======
+    "swr": "^2.2.5",
+    "typescript": "^5.4.3",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+>>>>>>> 378a321d4070a4f9b84a77956da2ca5f9cc69341
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +66,7 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3"
+    "eslint-plugin-prettier": "^5.1.3",
+    "sass": "^1.75.0"
   }
 }
