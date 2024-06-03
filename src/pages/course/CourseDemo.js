@@ -13,5 +13,4 @@ export const CourseDemo = () => {
 
     const change = () => {
         
-    }
-}
+    };
