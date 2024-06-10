@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-<<<<<<< HEAD
-import Login from './login/login';
-import Callroll from './callroll';
+import Login from './login';
+import Callroll from './pages/callroll';
 import React from 'react';
 import { List } from '@douyinfe/semi-ui';
 
@@ -22,10 +21,6 @@ class SimpleList extends React.Component {
     }
   }
 
-=======
-import Login from './login';
-import Callroll from './pages/callroll';
->>>>>>> 378a321d4070a4f9b84a77956da2ca5f9cc69341
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -46,29 +41,26 @@ const App = () => {
 
 export default App;
 
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+// function Text() {
+//   const [data, setData] = useState('');
 
-function Text() {
-  const [data, setData] = useState('');
+//   useEffect(() => {
+//       http.post("/teacher/login", {
+//           username: 'guest',
+//           password: '123456'
+//       })
+//         .then(res => localStorage.setItem('taken', res.data.token));
+//   },{})
 
-  useEffect(() => {
-      http.post("/teacher/login", {
-          username: 'guest',
-          password: '123456'
-      })
-        .then(res => localStorage.setItem('taken', res.data.token));
-  },{})
+//   const text = () => {
+//     http.get('/text').then(res => setData(res.data));
+//   }
 
-  const text = () => {
-    http.get('/text').then(res => setData(res.data));
-  }
+//   return (
+//     <>
+//       <button onClick={text}>text</button>
+//       <div>{data}</div>  
+//     </>
 
-  return (
-    <>
-      <button onClick={text}>text</button>
-      <div>{data}</div>  
-    </>
-
-  );
-}
+//   );
+// }

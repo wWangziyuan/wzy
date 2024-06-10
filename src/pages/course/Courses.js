@@ -11,7 +11,7 @@ export const addCourse = name =>
 export const Courses = () => {
     const navigate = useNavigate();
     const [visible, setVisible] = useState(false);
-    const [courseName, setCourseName] = useState();
+    const [courseName, setCourseName] = useState();     
     const{
         data: courses,
         error,
